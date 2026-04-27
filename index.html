@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Livros | Cores Vibrantes</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>
+        📚 Mosaico Livros <span>+ livros</span>
+      </h1>
+      <p class="subtitulo">Descubra histórias incríveis com um toque de cor</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="filtros">
+      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="J.R.R. Tolkien">Tolkien</button>
+      <button class="filtro-btn" data-filtro="Machado de Assis">Machado</button>
+      <button class="filtro-btn" data-filtro="George Orwell">Orwell</button>
+      <button class="filtro-btn" data-filtro="Antoine de Saint-Exupéry">Saint-Exupéry</button>
+    </div>
+
+    <div id="catalogo-grid" class="catalogo-grid">
+      <!-- Os cards serão inseridos via JavaScript -->
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>✨ Catálogo elaborado com <span>♥</span> usando vermelho, azul e amarelo ✨</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
