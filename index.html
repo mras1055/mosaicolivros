@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3d2919">
+  <title>Mosaico Livros — Encontre sua história</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Mosaico Livros, início">
+      <img class="brand-logo" src="assets/mosaico-logo.png" alt="Mosaico Livros — Encontre sua história">
+    </a>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#autores">Autores</a><a href="#eventos">Eventos</a><a href="#sobre">Sobre</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box"><span class="sr-only">Buscar livros</span><input id="search" type="search" placeholder="Buscar livros..." autocomplete="off"><span aria-hidden="true">⌕</span></label>
+      <button class="cart-button" id="cart-button" aria-label="Abrir carrinho">Sacola <span id="cart-count">0</span></button>
+      <button class="manage-button" id="manage-button">Gerenciar</button>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">UM BOM LIVRO MUDA TUDO</p>
+        <h1>Histórias para<br><em>ficar com você.</em></h1>
+        <p class="hero-description">Descubra histórias que transformam, ampliam horizontes e ficam guardadas para sempre.</p>
+        <a class="button button-dark" href="#catalogo">Ver catálogo completo <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="Uma pequena seleção colorida de livros">
+        <div class="book-stack"><span class="shelf-book blue">Mistérios do Norte</span><span class="shelf-book red">A Última Folha</span><span class="shelf-book green">Floresta Viva</span><span class="shelf-book purple">Vozes do Tempo</span><span class="shelf-book ochre">O Alquimista</span><span class="shelf-book teal">Mar Profundo</span></div>
+        <p class="art-note">Encontre seu<br>próximo favorito <span>✳</span></p>
+      </div>
+      <div class="hero-bottom"><span>LEITURAS ESCOLHIDAS COM CARINHO</span><span>DESDE 2018 <b>✳</b> SÃO PAULO, BRASIL</span></div>
+    </section>
+
+    <section class="catalog-section" id="catalogo">
+      <div class="section-heading"><div><p class="eyebrow">A SUA PRÓXIMA LEITURA</p><h2>Explore o catálogo</h2></div><p class="result-count" id="result-count"></p></div>
+      <div class="filters" role="group" aria-label="Filtrar por gênero" id="filters"></div>
+      <section class="manager" id="manager" hidden aria-label="Gerenciar catálogo"></section>
+      <div class="book-grid" id="book-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>Nenhum livro encontrado. Tente outro título ou gênero.</p>
+      <button class="button button-outline load-more" id="load-more">Carregar mais livros <span>↓</span></button>
+    </section>
+
+    <section class="quote-section" id="autores"><span class="quote-mark">“</span><blockquote>Um livro é um sonho que você segura nas mãos.</blockquote><p>— Neil Gaiman</p></section>
+
+    <section class="newsletter" id="eventos"><div><p class="eyebrow">CARTAS DA LIVRARIA</p><h2>Uma pausa para ler.</h2><p>Novidades, encontros e boas histórias direto na sua caixa de entrada.</p></div><form id="newsletter-form"><label class="sr-only" for="email">Seu e-mail</label><input id="email" type="email" placeholder="Seu melhor e-mail" required><button class="button button-dark" type="submit">Quero receber <span>→</span></button></form><p class="newsletter-message" id="newsletter-message" aria-live="polite"></p></section>
+  </main>
+
+  <footer id="sobre"><a class="brand footer-brand" href="#inicio"><img class="brand-logo" src="assets/mosaico-logo.png" alt="Mosaico Livros — Encontre sua história"></a><p>Livros, café e boas conversas.<br>Encontre sua história.</p><span class="copyright">© 2026 MOSAICO LIVROS</span></footer>
+
+  <dialog class="book-dialog" id="book-dialog"><button class="dialog-close" aria-label="Fechar">×</button><div class="dialog-content" id="dialog-content"></div></dialog>
+  <dialog class="login-dialog" id="login-dialog"><button class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">ÁREA RESTRITA</p><h2>Acesso do administrador</h2><form id="login-form"><label for="admin-password">Senha</label><input id="admin-password" type="password" autocomplete="current-password" required><button class="button button-dark" type="submit">Entrar</button><p id="login-error" aria-live="polite"></p></form></dialog>
+  <dialog class="cart-dialog" id="cart-dialog"><button class="dialog-close" aria-label="Fechar">×</button><p class="eyebrow">SUA SELEÇÃO</p><h2>Sacola de livros</h2><div id="cart-items"></div><div class="cart-total" id="cart-total"></div><label class="whatsapp-label" for="whatsapp-number">Número do WhatsApp da livraria</label><input class="whatsapp-input" id="whatsapp-number" type="tel" placeholder="5511999999999"><button class="button button-dark whatsapp-send" id="whatsapp-send">Enviar pedido pelo WhatsApp <span>↗</span></button><p class="cart-note">O WhatsApp abrirá com a mensagem do pedido pronta para você enviar.</p></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
